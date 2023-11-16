@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "YT-AD-Speed-up",
+    "version": "1.0.0",
+    "description": "Speed up AD",
+    "icons": {
+        "16": "icons.png",
+        "48": "icons.png",
+        "128": "icons.png"
+    },
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "activeTab"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.youtube.com/*"
+        ],
+        "js": [
+          "content.js"
+        ]
+      }
+    ]
+  }
